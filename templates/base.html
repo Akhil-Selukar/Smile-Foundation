@@ -13,6 +13,13 @@
           <li><a class="navbar-brand" href="{% url 'index' %}">Smile Foundation</a></li>
           <li><a class="navbar-link" href="{% url 'doctor:register' %}">Register</a></li>
           <li><a class="navbar-link" href="{% url 'admin:index' %}">Admin</a></li>
+
+          {% if user.is_authenticated %}
+          <li><a class="navbar-link" href="{% url 'logout' %}">Logout</a></li>
+          {% else %}
+          <li><a class="navbar-link" href="{% url 'doctor:login' %}">Login</a></li>
+          {% endif %}
+
         </ul>
       </div>
     </nav>

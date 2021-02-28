@@ -133,8 +133,9 @@ STATICFILES_DIRS = [
     BASE_DIR/'static'
 ]
 
-
 # Media
-
 MEDIA_ROOT = BASE_DIR/'media'
 MEDIA_URL = '/media/'
+
+# Login url
+LOGIN_URL = '/doctor/templates/login'
