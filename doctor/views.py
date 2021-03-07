@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from doctor.forms import DrForm, DrProfileForm
+from django.views import generic
 #import for login and loguot functionality
 from django.http import HttpResponseRedirect, HttpResponse
 from django.urls import reverse
@@ -7,8 +8,8 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 # Create your views here.
 
-def index(request):
-    return render(request, 'index.html')
+class IndexView(generic.TemplateView):
+    template_name = 'index.html'
 
 def register(request):
     registered = False

@@ -18,7 +18,7 @@ from django.urls import path, include
 from doctor import views
 
 urlpatterns = [
-    path('',views.index,name='index'),
+    path('',views.IndexView.as_view(),name='index'),
     path('admin/', admin.site.urls),
     path('doctor/',include('doctor.urls')),
     path('logout/',views.dr_logout,name='logout'),
